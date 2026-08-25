@@ -187,6 +187,11 @@ h4,
 [data-theme="vibecoding-dark"] .prose-vf code[data-theme] span {
   color: var(--shiki-dark);
 }
+/* Imágenes en prosa (mockups de la guía de UI/UX, capturas): ancho completo,
+   borde suave y fondo claro fijo para que los SVG se lean igual en tema oscuro. */
+.prose-vf img {
+  @apply w-full h-auto my-8 rounded-xl border border-base-300 bg-white;
+}
 .prose-vf table {
   @apply w-full text-sm my-6 border-collapse;
 }

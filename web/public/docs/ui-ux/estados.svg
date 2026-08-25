@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 340" width="1080" height="340">
+<rect width="1080" height="340" fill="#F8FAFC" rx="18"/>
+
+
+  <g transform="translate(20,0)">
+    <rect x="0" y="0" width="520" height="340" rx="14" fill="#fff" stroke="#E2E8F0" stroke-width="2"/>
+    <rect x="16" y="14" width="62" height="24" rx="12" fill="#DC2626"/>
+    <text x="47" y="31" text-anchor="middle" font-family='DM Sans, Inter, Arial, sans-serif' font-size="12" font-weight="700" fill="#fff">✗ MAL</text>
+    <text x="504" y="31" text-anchor="end" font-family='DM Sans, Inter, Arial, sans-serif' font-size="12" fill="#64748B">Pantalla en blanco y error críptico</text>
+  </g>
+<g transform="translate(20,0)">
+  <rect x="40" y="60" width="200" height="200" rx="12" fill="#fff" stroke="#E2E8F0"/>
+  <text x="140" y="96" text-anchor="middle" font-family='Space Grotesk, Arial, sans-serif' font-size="13" font-weight="700" fill="#1E293B">Mis proyectos</text>
+  <text x="140" y="170" text-anchor="middle" font-family='DM Sans, Inter, Arial, sans-serif' font-size="12" fill="#CBD5E1">(nada)</text>
+  <rect x="280" y="60" width="200" height="200" rx="12" fill="#fff" stroke="#E2E8F0"/>
+  <text x="380" y="96" text-anchor="middle" font-family='Space Grotesk, Arial, sans-serif' font-size="13" font-weight="700" fill="#1E293B">Registro</text>
+  <rect x="300" y="116" width="160" height="30" rx="6" fill="#fff" stroke="#E2E8F0"/>
+  <text x="308" y="135" font-family='DM Sans, Inter, Arial, sans-serif' font-size="11" fill="#64748B">correo</text>
+  <text x="300" y="168" font-family='DM Sans, Inter, Arial, sans-serif' font-size="10" fill="#DC2626">Error 500: Unhandled exception</text>
+  <text x="300" y="182" font-family='DM Sans, Inter, Arial, sans-serif' font-size="10" fill="#DC2626">at fetchUser (auth.js:42)</text>
+  <rect x="300" y="200" width="160" height="40" rx="8" fill="#C4B5FD"/><text x="380" y="225" text-anchor="middle" font-family='DM Sans, Inter, Arial, sans-serif' font-size="14" font-weight="600" fill="#fff">Enviar</text>
+  <text x="40" y="300" font-family='DM Sans, Inter, Arial, sans-serif' font-size="12" fill="#64748B">El usuario no sabe si está roto, cargando o simplemente vacío.</text>
+</g>
+
+  <g transform="translate(560,0)">
+    <rect x="0" y="0" width="520" height="340" rx="14" fill="#fff" stroke="#E2E8F0" stroke-width="2"/>
+    <rect x="16" y="14" width="68" height="24" rx="12" fill="#16A34A"/>
+    <text x="50" y="31" text-anchor="middle" font-family='DM Sans, Inter, Arial, sans-serif' font-size="12" font-weight="700" fill="#fff">✓ BIEN</text>
+    <text x="504" y="31" text-anchor="end" font-family='DM Sans, Inter, Arial, sans-serif' font-size="12" fill="#64748B">Cada estado explica y guía</text>
+  </g>
+<g transform="translate(560,0)">
+  <rect x="40" y="60" width="200" height="200" rx="12" fill="#fff" stroke="#E2E8F0"/>
+  <text x="140" y="96" text-anchor="middle" font-family='Space Grotesk, Arial, sans-serif' font-size="13" font-weight="700" fill="#1E293B">Mis proyectos</text>
+  <rect x="122" y="112" width="36" height="36" rx="10" fill="#7C3AED" opacity=".12"/>
+  <rect x="134" y="124" width="12" height="12" rx="2" fill="#7C3AED"/>
+  <text x="140" y="170" text-anchor="middle" font-family='DM Sans, Inter, Arial, sans-serif' font-size="12" font-weight="600" fill="#1E293B">Aún no tienes proyectos</text>
+  <text x="140" y="186" text-anchor="middle" font-family='DM Sans, Inter, Arial, sans-serif' font-size="10" fill="#64748B">Crea el primero en 1 minuto.</text>
+  <rect x="80" y="204" width="120" height="32" rx="8" fill="#F97316"/><text x="140" y="225" text-anchor="middle" font-family='DM Sans, Inter, Arial, sans-serif' font-size="14" font-weight="600" fill="#fff">+ Nuevo proyecto</text>
+  <rect x="280" y="60" width="200" height="200" rx="12" fill="#fff" stroke="#E2E8F0"/>
+  <text x="380" y="96" text-anchor="middle" font-family='Space Grotesk, Arial, sans-serif' font-size="13" font-weight="700" fill="#1E293B">Registro</text>
+  <text x="300" y="112" font-family='DM Sans, Inter, Arial, sans-serif' font-size="10" font-weight="600" fill="#1E293B">Correo</text>
+  <rect x="300" y="118" width="160" height="30" rx="6" fill="#fff" stroke="#DC2626" stroke-width="2"/>
+  <text x="308" y="137" font-family='DM Sans, Inter, Arial, sans-serif' font-size="11" fill="#1E293B">pedro@gmail</text>
+  <text x="300" y="164" font-family='DM Sans, Inter, Arial, sans-serif' font-size="10" fill="#DC2626">Falta el dominio, ej. pedro@gmail.com</text>
+  <rect x="300" y="200" width="160" height="36" rx="8" fill="#F97316"/>
+  <circle cx="352" cy="218" r="6" fill="none" stroke="#fff" stroke-width="2" stroke-dasharray="20 10"/>
+  <text x="392" y="223" text-anchor="middle" font-family='DM Sans, Inter, Arial, sans-serif' font-size="12" font-weight="600" fill="#fff">Creando…</text>
+  <text x="40" y="300" font-family='DM Sans, Inter, Arial, sans-serif' font-size="12" fill="#64748B">Vacío con acción, error en humano junto al campo, botón con spinner.</text>
+</g>
+</svg>

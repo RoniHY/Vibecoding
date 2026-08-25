@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 380" width="1080" height="380">
+<rect width="1080" height="380" fill="#F8FAFC" rx="18"/>
+
+
+  <g transform="translate(20,0)">
+    <rect x="0" y="0" width="520" height="380" rx="14" fill="#fff" stroke="#E2E8F0" stroke-width="2"/>
+    <rect x="16" y="14" width="62" height="24" rx="12" fill="#DC2626"/>
+    <text x="47" y="31" text-anchor="middle" font-family='DM Sans, Inter, Arial, sans-serif' font-size="12" font-weight="700" fill="#fff">✗ MAL</text>
+    <text x="504" y="31" text-anchor="end" font-family='DM Sans, Inter, Arial, sans-serif' font-size="12" fill="#64748B">Escritorio encogido</text>
+  </g>
+<g transform="translate(20,0)">
+  <rect x="180" y="56" width="160" height="300" rx="18" fill="#fff" stroke="#1E293B" stroke-width="3"/>
+  <rect x="192" y="70" width="136" height="276" rx="6" fill="#F8FAFC"/>
+  <g transform="translate(192,70)">
+    <rect x="4" y="4" width="128" height="10" rx="2" fill="#fff" stroke="#E2E8F0"/>
+    <text x="8" y="12" font-family='DM Sans, Inter, Arial, sans-serif' font-size="5" fill="#1E293B">Logo   Inicio  Producto  Precios  Blog  Contacto</text>
+    <text x="8" y="30" font-family='Space Grotesk, Arial, sans-serif' font-size="7" font-weight="700" fill="#1E293B">Bienvenido a nuestra plataforma</text>
+    <rect x="6" y="38" width="38" height="60" rx="3" fill="#fff" stroke="#E2E8F0"/><rect x="9" y="44" width="30" height="3" rx="3" fill="#CBD5E1"/><rect x="9" y="51" width="30" height="3" rx="3" fill="#CBD5E1"/><rect x="9" y="58" width="26" height="3" rx="3" fill="#CBD5E1"/><rect x="9" y="65" width="30" height="3" rx="3" fill="#CBD5E1"/><rect x="9" y="72" width="22" height="3" rx="3" fill="#CBD5E1"/><rect x="9" y="79" width="30" height="3" rx="3" fill="#CBD5E1"/><rect x="48" y="38" width="38" height="60" rx="3" fill="#fff" stroke="#E2E8F0"/><rect x="51" y="44" width="30" height="3" rx="3" fill="#CBD5E1"/><rect x="51" y="51" width="30" height="3" rx="3" fill="#CBD5E1"/><rect x="51" y="58" width="26" height="3" rx="3" fill="#CBD5E1"/><rect x="51" y="65" width="30" height="3" rx="3" fill="#CBD5E1"/><rect x="51" y="72" width="22" height="3" rx="3" fill="#CBD5E1"/><rect x="51" y="79" width="30" height="3" rx="3" fill="#CBD5E1"/><rect x="90" y="38" width="38" height="60" rx="3" fill="#fff" stroke="#E2E8F0"/><rect x="93" y="44" width="30" height="3" rx="3" fill="#CBD5E1"/><rect x="93" y="51" width="30" height="3" rx="3" fill="#CBD5E1"/><rect x="93" y="58" width="26" height="3" rx="3" fill="#CBD5E1"/><rect x="93" y="65" width="30" height="3" rx="3" fill="#CBD5E1"/><rect x="93" y="72" width="22" height="3" rx="3" fill="#CBD5E1"/><rect x="93" y="79" width="30" height="3" rx="3" fill="#CBD5E1"/>
+    <rect x="6" y="106" width="50" height="14" rx="2" fill="#7C3AED"/>
+    <rect x="60" y="106" width="50" height="14" rx="2" fill="#7C3AED"/>
+    <rect x="6" y="130" width="124" height="3" rx="3" fill="#CBD5E1"/><rect x="6" y="138" width="124" height="3" rx="3" fill="#CBD5E1"/><rect x="6" y="146" width="124" height="3" rx="3" fill="#CBD5E1"/><rect x="6" y="154" width="124" height="3" rx="3" fill="#CBD5E1"/><rect x="6" y="162" width="124" height="3" rx="3" fill="#CBD5E1"/><rect x="6" y="170" width="110" height="3" rx="3" fill="#CBD5E1"/><rect x="6" y="178" width="124" height="3" rx="3" fill="#CBD5E1"/><rect x="6" y="186" width="124" height="3" rx="3" fill="#CBD5E1"/><rect x="6" y="194" width="124" height="3" rx="3" fill="#CBD5E1"/><rect x="6" y="202" width="100" height="3" rx="3" fill="#CBD5E1"/>
+  </g>
+  <text x="40" y="374" font-family='DM Sans, Inter, Arial, sans-serif' font-size="12" fill="#64748B">Texto de 5px, 3 columnas apretadas, botones que no se pueden tocar.</text>
+</g>
+
+  <g transform="translate(560,0)">
+    <rect x="0" y="0" width="520" height="380" rx="14" fill="#fff" stroke="#E2E8F0" stroke-width="2"/>
+    <rect x="16" y="14" width="68" height="24" rx="12" fill="#16A34A"/>
+    <text x="50" y="31" text-anchor="middle" font-family='DM Sans, Inter, Arial, sans-serif' font-size="12" font-weight="700" fill="#fff">✓ BIEN</text>
+    <text x="504" y="31" text-anchor="end" font-family='DM Sans, Inter, Arial, sans-serif' font-size="12" fill="#64748B">Mobile-first: una columna</text>
+  </g>
+<g transform="translate(560,0)">
+  <rect x="180" y="56" width="160" height="300" rx="18" fill="#fff" stroke="#1E293B" stroke-width="3"/>
+  <rect x="192" y="70" width="136" height="276" rx="6" fill="#F8FAFC"/>
+  <g transform="translate(192,70)">
+    <rect x="0" y="0" width="136" height="24" fill="#fff"/>
+    <text x="10" y="16" font-family='Space Grotesk, Arial, sans-serif' font-size="10" font-weight="700" fill="#7C3AED">Logo</text>
+    <rect x="112" y="8" width="14" height="2" rx="1" fill="#1E293B"/><rect x="112" y="12" width="14" height="2" rx="1" fill="#1E293B"/><rect x="112" y="16" width="14" height="2" rx="1" fill="#1E293B"/>
+    <text x="10" y="56" font-family='Space Grotesk, Arial, sans-serif' font-size="15" font-weight="700" fill="#1E293B">Llena tu agenda</text>
+    <text x="10" y="74" font-family='Space Grotesk, Arial, sans-serif' font-size="15" font-weight="700" fill="#1E293B">sin WhatsApp</text>
+    <rect x="10" y="86" width="116" height="4" rx="3" fill="#CBD5E1"/><rect x="10" y="96" width="100" height="4" rx="3" fill="#CBD5E1"/>
+    <rect x="10" y="112" width="116" height="30" rx="7" fill="#F97316"/>
+    <text x="68" y="131" text-anchor="middle" font-family='DM Sans, Inter, Arial, sans-serif' font-size="9" font-weight="700" fill="#fff">Empieza gratis</text>
+    <rect x="10" y="156" width="116" height="52" rx="8" fill="#fff" stroke="#E2E8F0"/>
+    <rect x="20" y="166" width="14" height="14" rx="4" fill="#7C3AED" opacity=".3"/>
+    <rect x="20" y="186" width="80" height="4" rx="3" fill="#CBD5E1"/><rect x="20" y="194" width="60" height="4" rx="3" fill="#CBD5E1"/>
+    <rect x="10" y="216" width="116" height="52" rx="8" fill="#fff" stroke="#E2E8F0"/>
+    <rect x="20" y="226" width="14" height="14" rx="4" fill="#7C3AED" opacity=".3"/>
+    <rect x="20" y="246" width="80" height="4" rx="3" fill="#CBD5E1"/><rect x="20" y="254" width="60" height="4" rx="3" fill="#CBD5E1"/>
+  </g>
+  <text x="40" y="374" font-family='DM Sans, Inter, Arial, sans-serif' font-size="12" fill="#64748B">Menú hamburguesa, texto ≥16px, botón de ancho completo (≥44px alto).</text>
+</g>
+</svg>

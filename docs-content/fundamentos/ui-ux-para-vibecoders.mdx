@@ -1,0 +1,230 @@
+---
+title: UI/UX para vibecoders
+description: Conceptos, reglas rápidas y tips para que tu landing o MVP se vea profesional sin ser diseñador.
+order: 7
+---
+
+<StackBadge tech={["tailwind", "daisyui", "cursor"]} />
+
+No eres diseñador y no necesitas serlo. Necesitas **un puñado de conceptos**, unas **reglas que casi nunca fallan** y saber **cómo pedírselo a la IA**. Esta guía es eso: lo mínimo para que tu página se vea hecha con cuidado y no "generada". Al final hay un checklist de 10 puntos para revisar antes de entregar.
+
+<Callout type="info" title="La regla cero: usa el design system de la plantilla">
+Vibecoding ya trae colores, tipografía y espaciado resueltos ([Design system](/docs/componentes/design-system)). Tu trabajo no es inventar un estilo: es **cambiar el color de marca en `config.js`**, poner tu copy y respetar el sistema. Casi todos los "se ve feo" vienen de pedirle a la IA que invente cosas fuera del sistema.
+</Callout>
+
+## Los conceptos que sí importan
+
+Diez ideas, explicadas en simple. Si entiendes estas, ya puedes juzgar si una pantalla está bien o mal.
+
+### 1. Jerarquía visual
+
+La página le dice al ojo **qué mirar primero, segundo y tercero**. Se logra con tres palancas: **tamaño**, **peso** (negrita) y **color** (oscuro = importante, gris = secundario). Si todo es grande y negrita, nada lo es.
+
+<img src="/docs/ui-ux/jerarquia.svg" alt="Comparación: a la izquierda cuatro títulos del mismo tamaño y tres botones morados iguales; a la derecha un eyebrow pequeño, un título grande, un subtítulo gris y un solo botón naranja." />
+
+**En tu hero:** eyebrow pequeño (para quién es) → título grande (el beneficio) → subtítulo gris (cómo) → un botón.
+
+### 2. Espaciado y aire (whitespace)
+
+El espacio vacío no es desperdicio: **agrupa** lo que va junto y **separa** lo que no. Regla práctica: empieza con más aire del que crees y quita después. Usa una escala fija (8 · 16 · 24 · 32 · 48 · 64 px) y nada de valores sueltos como `13px`.
+
+<img src="/docs/ui-ux/espaciado.svg" alt="Comparación: a la izquierda tres tarjetas apretadas con texto pegado a los bordes; a la derecha las mismas tarjetas con padding generoso, separación uniforme y texto corto." />
+
+### 3. Contraste
+
+El texto tiene que **leerse sin esfuerzo**. El estándar es un contraste mínimo de **4.5:1** entre texto y fondo (3:1 para texto grande). "Gris clarito sobre gris" se ve elegante en tu monitor y es ilegible en un celular al sol.
+
+<img src="/docs/ui-ux/contraste.svg" alt="Comparación: a la izquierda texto gris claro sobre fondo gris con un botón lavado; a la derecha texto oscuro sobre blanco con un botón naranja sólido." />
+
+Para revisar: pega los dos colores en [WebAIM Contrast Checker](https://webaim.org/resources/contrastchecker/). En la plantilla, `base-content` sobre `base-100` ya cumple.
+
+### 4. Tipografía
+
+**Máximo 2 fuentes** (una para títulos, otra para cuerpo) y una **escala de tamaños** de 4–5 pasos, no 12. La plantilla ya la trae: Space Grotesk para títulos, DM Sans para cuerpo. Cuerpo mínimo **16px** en móvil; líneas de 60–75 caracteres.
+
+<img src="/docs/ui-ux/tipografia.svg" alt="Comparación: a la izquierda un bloque con cuatro fuentes distintas (serif itálica, Impact, monoespaciada y cursiva) y tamaños al azar; a la derecha el mismo contenido con dos fuentes y una escala clara de 12, 15, 18 y 30 píxeles." />
+
+### 5. Color: 60-30-10 y un solo color de acción
+
+- **60%** fondo neutro (blanco / gris muy claro).
+- **30%** color de marca (títulos, iconos, acentos).
+- **10%** color de acción, **solo** para lo que quieres que hagan clic.
+
+En Vibecoding: neutro = slate, marca = `primary` (tu hex en `config.brand.primary`), acción = `accent` (naranja). Si el naranja aparece en 8 lugares, deja de significar "haz clic aquí".
+
+### 6. Consistencia
+
+Mismo botón = misma forma, mismo color, mismo tamaño en toda la app. Mismos márgenes entre secciones. Si una tarjeta tiene esquinas de 12px, todas las tienen. La gente perdona una página simple; no perdona una que **se siente distinta en cada sección**.
+
+### 7. Affordance (que se note qué se puede tocar)
+
+Un botón debe **parecer** botón (relleno, bordes redondeados, sombra ligera). Un link debe verse como link (color o subrayado). Texto que parece botón pero no hace nada, o botón que parece texto, frustra al usuario. Y sigue las convenciones: logo arriba a la izquierda, menú arriba a la derecha, carrito con ícono de carrito (la gente ya aprendió eso en otros sitios: la [Ley de Jakob](https://lawsofux.com/jakobs-law/)).
+
+### 8. Above the fold y CTA
+
+Lo que se ve **sin hacer scroll** decide si siguen leyendo. Ahí van: para quién es, qué beneficio da y **un** llamado a la acción (CTA). El CTA es verbo + resultado ("Crear mi cuenta gratis", no "Enviar") y va acompañado de una línea que quita miedo ("Sin tarjeta").
+
+<img src="/docs/ui-ux/cta.svg" alt="Comparación: a la izquierda cinco botones morados iguales (Enviar, Demo, Precios, Contacto, Blog); a la derecha un botón naranja grande 'Crear mi cuenta gratis', un secundario con borde 'Ver demo' y una línea 'Sin tarjeta'." />
+
+### 9. Estados vacíos, de carga y de error
+
+Un MVP tiene tres momentos que la IA suele olvidar:
+
+| Estado | Qué debe mostrar |
+|---|---|
+| **Vacío** (todavía no hay datos) | Un mensaje humano + el botón para crear lo primero. Nunca una pantalla en blanco. |
+| **Cargando** | Spinner o skeleton en el botón/sección. Que se note que algo pasa. |
+| **Error** | Qué falló y qué hacer, junto al campo. Nunca `Error 500: Unhandled exception`. |
+
+<img src="/docs/ui-ux/estados.svg" alt="Comparación: a la izquierda una lista vacía sin mensaje y un formulario con error técnico en rojo; a la derecha un estado vacío con ícono, texto y botón de crear, y un formulario con error en lenguaje humano junto al campo y un botón con spinner." />
+
+### 10. Responsive y mobile-first
+
+La mitad (o más) de tus visitas llegan desde el celular. Diseña **primero para 375px de ancho** y luego expande: una columna, botones de ancho completo, menú hamburguesa, texto ≥16px, áreas táctiles de al menos **44×44 px** (lo que piden Apple y Google).
+
+<img src="/docs/ui-ux/responsive.svg" alt="Comparación en dos teléfonos: a la izquierda una versión de escritorio encogida con texto diminuto y tres columnas; a la derecha una versión de una columna con título grande, botón de ancho completo y tarjetas apiladas." />
+
+### Bonus: accesibilidad básica
+
+No es un extra: es **que más gente pueda usar tu producto**. Lo mínimo:
+
+- Contraste ≥ 4.5:1 (punto 3).
+- Todo lo clicable se puede usar con teclado (Tab) y se ve el foco. La plantilla ya lo hace; no le pidas a la IA que quite el `outline`.
+- Imágenes con `alt`, inputs con label visible.
+- Iconos con texto al lado (o `aria-label`), nunca solo el ícono.
+
+## Reglas rápidas: haz / no hagas
+
+Para landings y MVPs. Cada una con el porqué en una línea.
+
+| ✅ Haz | ❌ No hagas | Por qué |
+|---|---|---|
+| Un solo CTA primario por sección | 3 botones iguales en el hero | Más opciones = más tiempo decidiendo y menos clics ([Ley de Hick](https://lawsofux.com/hicks-law/)). |
+| Título con el beneficio concreto | "Bienvenido a nuestra plataforma" | Nadie llega a tu página a que le den la bienvenida; llega a resolver algo. |
+| Fondo claro y neutro por default | Dark mode como único tema | El oscuro esconde errores de contraste y grita "hecho con IA". |
+| Un color de acción (naranja) | Naranja en botones, links, badges e iconos | Si todo es naranja, nada dice "haz clic aquí". |
+| Iconos SVG (Lucide) | Emojis como iconos o en títulos | Los emojis se ven distintos en cada sistema y se ven de juguete. |
+| 3 features **distintos** en forma o contenido | 3 tarjetas idénticas con texto relleno | La repetición perfecta se lee como plantilla. |
+| Copy específico ("para dentistas en CDMX") | "Revoluciona tu productividad" | Lo específico convence; lo genérico se ignora. |
+| Botones ≥ 44px de alto en móvil | Links pequeños pegados entre sí | Un dedo no es un cursor ([Ley de Fitts](https://lawsofux.com/fittss-law/)). |
+| Espaciado en escala 8/16/24/32 | Márgenes "a ojo" distintos en cada bloque | La consistencia se percibe aunque nadie la mida. |
+| Una captura real de tu producto | Ilustración abstracta genérica | La gente quiere ver **qué va a usar**. |
+| Escribir errores en humano | Mostrar el mensaje técnico tal cual | El usuario no puede arreglar `auth.js:42`; sí puede corregir su correo. |
+| Probar en el celular antes de entregar | Revisar solo en tu monitor | Ahí lo van a ver tus usuarios (y tus profes). |
+
+## Tips de vibecoding: cómo pedirle diseño a la IA
+
+La IA diseña bien **cuando le das restricciones**. Sin ellas, cae en el promedio de internet: gradiente morado, tarjetas grises, emojis y "desbloquea el poder de…".
+
+<img src="/docs/ui-ux/look-ia.svg" alt="Comparación: a la izquierda una landing oscura con gradiente morado a cian, emoji cohete en el título, botón 'Comenzar Ahora' y tres tarjetas idénticas con emojis; a la derecha una landing clara para talleres mecánicos con título concreto, un botón naranja, una captura del producto y un testimonio." />
+
+### 1. Pide con referencias, paleta, tipografía y "sin texto genérico"
+
+Junta 3 referencias (Pinterest, la competencia, un producto que te gusta) y **di qué te gusta de cada una**. La IA no adivina; describe.
+
+<PromptBox label="Prompt — rediseñar el hero con referencias">
+Quiero rediseñar SOLO la sección Hero de la landing (web/components/landing/Hero.js), sin tocar el resto.
+
+Referencias de estilo:
+- linear.app: mucho aire, título grande y corto, un solo botón.
+- stripe.com/mx: subtítulo gris que explica en una frase, sin adornos.
+- Captura adjunta: me gusta cómo el producto aparece a la derecha en una tarjeta con sombra suave.
+
+Restricciones:
+- Usa los tokens del design system (primary, accent, base-*). Sin hex nuevos, sin gradientes.
+- Tipografía la que ya trae la plantilla (Space Grotesk títulos, DM Sans cuerpo). Sin fuentes nuevas.
+- Un solo botón primario (bg-accent) con verbo + beneficio; un link secundario de texto.
+- Nada de emojis, nada de "revoluciona", "desbloquea", "lleva tu negocio al siguiente nivel".
+- El copy sale de config.landing.hero; no lo hardcodees.
+- Mobile-first: en 375px debe verse en una columna, botón de ancho completo.
+
+Muéstrame el diff y explica en 3 líneas qué cambiaste.
+</PromptBox>
+
+### 2. Pásale capturas y links
+
+- **En Cursor:** arrastra la imagen al chat (o pégala con Ctrl/Cmd+V) y escribe "toma esta captura como referencia de estilo, no la copies literal". Puedes pegar links, pero Cursor no siempre los abre: mejor describe lo que ves.
+- **En Claude Code:** guarda la captura en tu proyecto (ej. `refs/hero-linear.png`) y dile "mira refs/hero-linear.png y aplica ese espaciado al Hero". Claude Code sí lee imágenes del disco.
+- Captura de **tu propia página** en móvil + "esto se ve apretado, arréglalo" funciona sorprendentemente bien.
+
+### 3. Pide cambios incrementales, no rediseños
+
+"Rediseña toda la landing" produce 400 líneas de cambios que no puedes revisar. Pide **una sección a la vez**:
+
+<PromptBox label="Prompt — cambio incremental">
+Solo en la sección de Features (web/components/landing/Features.js): las 3 tarjetas se ven idénticas. Haz que la primera sea más ancha (2 columnas en desktop) con una mini captura, y las otras dos más pequeñas. No cambies colores ni tipografía. No toques ningún otro archivo.
+</PromptBox>
+
+Y para ajustes finos, usa el vocabulario de esta guía: "más aire entre secciones", "el subtítulo con menos contraste (text-base-content/70)", "el botón más grande, 48px de alto".
+
+### 4. Usa el design system en vez de inventar
+
+Antes de pedir un componente nuevo, pregúntale a la IA si ya existe en la plantilla o en daisyUI:
+
+<PromptBox label="Prompt — reutilizar antes de inventar">
+Necesito una sección de testimonios en la landing. Antes de crear nada, revisa web/components/landing/ y los componentes de daisyUI que ya usa el proyecto. Reutiliza el estilo de tarjeta que ya existe (mismo radio, borde base-300, padding). Los datos van en config.landing.testimonials. No inventes colores ni sombras nuevas.
+</PromptBox>
+
+### 5. Evita el look genérico de IA
+
+Si tu página tiene **dos o más** de estos, la gente la va a leer como "hecha con IA en 5 minutos":
+
+- Fondo oscuro con gradiente morado/cian o "orbes" borrosos.
+- Emojis en títulos o como iconos de features.
+- Tres (o seis) tarjetas idénticas con textos tipo "Rápido · Seguro · Escalable".
+- Títulos con "Revoluciona", "Desbloquea", "Potencia", "Siguiente nivel".
+- Todo con la misma fuente (Inter) y todo con bordes redondeados iguales.
+- Ilustraciones abstractas 3D en lugar de tu producto.
+
+La cura es siempre la misma: **restricciones + copy específico + captura real**. Si ya lo generó así, dile:
+
+<PromptBox label="Prompt — quitar el look genérico">
+La landing se ve genérica. Cambia esto y nada más:
+1. Quita el gradiente y el fondo oscuro del hero; fondo base-100 y texto base-content.
+2. Sustituye los emojis por iconos de lucide-react (uno por feature, de trazo).
+3. Reescribe los 3 features con beneficios concretos para \{tu ICP}, cada uno de una frase; nada de "rápido/seguro/escalable".
+4. Deja un solo botón bg-accent en el hero.
+</PromptBox>
+
+### 6. Revisa en móvil, siempre
+
+1. Abre `localhost:3000`, presiona **F12** → ícono de celular (o Ctrl/Cmd+Shift+M) → elige **iPhone SE** (375px).
+2. Recorre toda la página: ¿algo se sale por la derecha? ¿texto diminuto? ¿botones pegados?
+3. Pégale la captura a la IA con "en 375px esto se rompe, arréglalo sin cambiar el desktop".
+4. Cuando esté en Vercel, ábrela en tu teléfono real. Es distinto.
+
+<Checkpoint>
+✅ Tu hero tiene eyebrow, título, subtítulo y **un** botón naranja.
+✅ En 375px se ve en una columna y nada se sale de la pantalla.
+✅ No hay emojis en títulos ni gradientes morados.
+</Checkpoint>
+
+## Checklist antes de entregar
+
+Marca los 10. Si fallan 2 o más, todavía no.
+
+1. **Above the fold:** en 3 segundos se entiende para quién es y qué gano.
+2. **Un CTA primario** por sección, en `accent`, con verbo + beneficio.
+3. **Jerarquía:** un solo título grande por sección; lo secundario en gris.
+4. **Contraste ≥ 4.5:1** en todo el texto (revisado con el checker).
+5. **2 fuentes máximo**, cuerpo ≥ 16px en móvil.
+6. **Espaciado** consistente en escala 8/16/24/32/48; secciones con aire.
+7. **Color de marca** puesto en `config.brand.primary`; sin hex sueltos en componentes.
+8. **Cero emojis** en títulos/iconos; iconos de Lucide.
+9. **Estados** cubiertos en tu MVP: vacío con acción, carga con spinner, error en humano.
+10. **Probado en 375px y en tu teléfono real:** nada se desborda, todo se puede tocar.
+
+<Callout type="success" title="Si dudas entre bonito y claro, elige claro">
+Una landing simple que se entiende convierte más que una espectacular que confunde. Lo espectacular llega después, con datos.
+</Callout>
+
+## Recursos
+
+- [Refactoring UI](https://www.refactoringui.com/) — el libro de diseño para gente que no diseña (de los creadores de Tailwind).
+- [Laws of UX](https://lawsofux.com/) — las leyes psicológicas del diseño, una por página, con ejemplos.
+- [10 heurísticas de usabilidad de Nielsen](https://www.nngroup.com/articles/ten-usability-heuristics/) — el checklist clásico para revisar cualquier interfaz.
+- [WebAIM Contrast Checker](https://webaim.org/resources/contrastchecker/) — pega dos colores y te dice si pasan.
+- [Apple Human Interface Guidelines](https://developer.apple.com/design/human-interface-guidelines/) y [Material Design 3](https://m3.material.io/) — las convenciones que tus usuarios ya conocen (tamaños táctiles, navegación).
+- [Lucide Icons](https://lucide.dev/icons/) — los iconos que usa la plantilla; busca por palabra en inglés.
+- [Coolors](https://coolors.co/) — para elegir un color de marca y ver paletas armónicas.
+- [Why AI design looks generic (Superdesign)](https://superdesign.dev/blog/why-ai-design-looks-generic) — por qué la IA cae en el gradiente morado y cómo evitarlo.

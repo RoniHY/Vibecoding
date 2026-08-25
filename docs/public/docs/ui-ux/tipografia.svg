@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 340" width="1080" height="340">
+<rect width="1080" height="340" fill="#F8FAFC" rx="18"/>
+
+
+  <g transform="translate(20,0)">
+    <rect x="0" y="0" width="520" height="340" rx="14" fill="#fff" stroke="#E2E8F0" stroke-width="2"/>
+    <rect x="16" y="14" width="62" height="24" rx="12" fill="#DC2626"/>
+    <text x="47" y="31" text-anchor="middle" font-family='DM Sans, Inter, Arial, sans-serif' font-size="12" font-weight="700" fill="#fff">✗ MAL</text>
+    <text x="504" y="31" text-anchor="end" font-family='DM Sans, Inter, Arial, sans-serif' font-size="12" fill="#64748B">4 fuentes, tamaños al azar</text>
+  </g>
+<g transform="translate(20,0)">
+  <text x="40" y="96" font-family="Georgia, serif" font-size="26" font-style="italic" fill="#1E293B">Nuestros servicios</text>
+  <text x="40" y="126" font-family="Impact, Arial Black, sans-serif" font-size="19" fill="#7C3AED">CONSULTORÍA PERSONALIZADA</text>
+  <text x="40" y="150" font-family="Courier New, monospace" font-size="13" fill="#1E293B">Te ayudamos a crecer tu negocio con</text>
+  <text x="40" y="168" font-family="Courier New, monospace" font-size="13" fill="#1E293B">estrategias digitales de alto impacto.</text>
+  <text x="40" y="200" font-family="Comic Sans MS, cursive" font-size="17" fill="#F97316">¡Agenda tu llamada hoy!</text>
+  <text x="40" y="228" font-family='DM Sans, Inter, Arial, sans-serif' font-size="11" fill="#64748B">Texto de 11px que nadie puede leer en el teléfono.</text>
+  <text x="40" y="300" font-family='DM Sans, Inter, Arial, sans-serif' font-size="12" fill="#64748B">Cada bloque con fuente distinta = ruido. Sin escala.</text>
+</g>
+
+  <g transform="translate(560,0)">
+    <rect x="0" y="0" width="520" height="340" rx="14" fill="#fff" stroke="#E2E8F0" stroke-width="2"/>
+    <rect x="16" y="14" width="68" height="24" rx="12" fill="#16A34A"/>
+    <text x="50" y="31" text-anchor="middle" font-family='DM Sans, Inter, Arial, sans-serif' font-size="12" font-weight="700" fill="#fff">✓ BIEN</text>
+    <text x="504" y="31" text-anchor="end" font-family='DM Sans, Inter, Arial, sans-serif' font-size="12" fill="#64748B">2 fuentes, escala clara</text>
+  </g>
+<g transform="translate(560,0)">
+  <text x="40" y="96" font-family='Space Grotesk, Arial, sans-serif' font-size="30" font-weight="700" fill="#1E293B">Nuestros servicios</text>
+  <text x="40" y="128" font-family='Space Grotesk, Arial, sans-serif' font-size="18" font-weight="600" fill="#1E293B">Consultoría personalizada</text>
+  <text x="40" y="154" font-family='DM Sans, Inter, Arial, sans-serif' font-size="15" fill="#475569">Te ayudamos a crecer tu negocio con</text>
+  <text x="40" y="176" font-family='DM Sans, Inter, Arial, sans-serif' font-size="15" fill="#475569">estrategias digitales de alto impacto.</text>
+  <text x="40" y="210" font-family='DM Sans, Inter, Arial, sans-serif' font-size="15" font-weight="600" fill="#7C3AED">Agenda tu llamada →</text>
+  <text x="40" y="240" font-family='DM Sans, Inter, Arial, sans-serif' font-size="12" fill="#64748B">Nota al pie de 12px, solo para lo secundario.</text>
+  <text x="40" y="300" font-family='DM Sans, Inter, Arial, sans-serif' font-size="12" fill="#64748B">Títulos Space Grotesk · cuerpo DM Sans · 12 / 15 / 18 / 30px.</text>
+</g>
+</svg>
