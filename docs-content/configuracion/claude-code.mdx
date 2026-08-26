@@ -1,20 +1,104 @@
 ---
 title: Claude Code paso a paso
-description: Instala y usa Claude Code, la alternativa a Cursor para vibecodear desde la terminal.
+description: Instala Claude Code de dos formas (extensión en Cursor/VS Code o terminal), elige tu modo y resuelve los errores típicos.
 order: 8
 ---
 
-<StackBadge tech={["claude", "node"]} />
+<StackBadge tech={["claude", "cursor", "node"]} />
 
-**Claude Code** es la herramienta de Anthropic para vibecodear desde la <Term id="terminal">terminal</Term> (o desde la terminal integrada de tu editor). Hace lo mismo que le pides a <Term id="cursor">Cursor</Term>: le hablas en español normal, lee los archivos de tu proyecto, propone cambios y los aplica cuando tú apruebas. Es una **alternativa a Cursor** — para el curso puedes usar cualquiera de los dos.
+**Claude Code** es la herramienta de Anthropic para vibecodear con IA. Hace lo mismo que le pides a <Term id="cursor">Cursor</Term>: le hablas en español normal, lee los archivos de tu proyecto, propone cambios y los aplica cuando tú apruebas. Es una **alternativa a Cursor** — para el curso puedes usar cualquiera de los dos, o los dos.
+
+Hay **dos formas** de instalarlo y esta guía cubre ambas:
+
+- **Camino A — como extensión dentro de Cursor o VS Code**: un panel de chat con botones, dentro del editor que ya usas. Recomendado si ya vives en Cursor.
+- **Camino B — directo desde la <Term id="terminal">terminal</Term>**: escribes `claude` y trabajas en texto. Funciona en cualquier terminal, incluida la integrada del editor.
 
 <Callout type="warning" title="Necesitas la versión de PAGO de Claude">
-Claude Code **no funciona con la cuenta gratis** de Claude. Necesitas un plan **Pro o superior** en [claude.ai](https://claude.ai) (Pro cuesta ~$20 USD/mes). Si ya pagas Cursor y no quieres pagar dos suscripciones, quédate con Cursor: todo el curso funciona igual con cualquiera de los dos.
+Claude Code **no funciona con la cuenta gratis** de Claude. Necesitas un plan **Pro o superior** en [claude.ai](https://claude.ai) (Pro cuesta ~$20 USD/mes). Si ya pagas Cursor y no quieres pagar dos suscripciones, quédate con Cursor: todo el curso funciona igual. Si **se te acabaron los créditos de Cursor**, Claude Code con plan Pro es el reemplazo natural.
 </Callout>
 
-## Instalación
+## ¿Cuál elijo?
 
-El método recomendado es el **instalador nativo** oficial: un solo <Term id="comando">comando</Term> en la terminal. (También existe `npm install -g @anthropic-ai/claude-code` si ya tienes Node, pero el instalador nativo se actualiza solo y da menos problemas.)
+| | Camino A: Extensión (Cursor / VS Code) | Camino B: Terminal |
+|---|---|---|
+| Cómo se ve | Panel de chat con botones, diffs en el editor | Texto en una ventana negra |
+| Instalación | Un clic en *Extensions* | Un comando en la terminal |
+| Ideal para… | Quien ya usa Cursor y quiere lo más visual | Quien ya se lleva bien con la terminal o quiere usarlo sin editor |
+| Cambiar de modo | Menú de modo en el panel | `Shift + Tab` |
+| ¿Funciona en Mac y Windows? | Sí | Sí |
+
+**Recomendación del curso**: si ya usas Cursor, empieza por el **Camino A**. Si algo no te aparece o prefieres la terminal, el **Camino B** funciona en cualquier compu y los dos comparten la misma cuenta y configuración — puedes tener ambos.
+
+<Callout type="info" title="Los nombres exactos pueden variar">
+Cursor, VS Code y Claude Code cambian seguido. Si un botón o menú se llama un poco distinto en tu pantalla, fíjate en la **función** (instalar extensión, abrir panel, iniciar sesión) más que en el nombre exacto.
+</Callout>
+
+## Camino A: extensión en Cursor o VS Code
+
+La extensión oficial se llama **Claude Code**, la publica **Anthropic** y funciona en VS Code (versión 1.94 o superior) y en Cursor. Trae adentro su propia copia de Claude Code, así que **no necesitas instalar nada en la terminal** para este camino.
+
+### 1. Instala la extensión
+
+1. Abre Cursor (o VS Code) con tu proyecto abierto.
+2. Abre el panel de extensiones: `Cmd + Shift + X` en Mac, `Ctrl + Shift + X` en Windows (o el ícono de cuadritos en la barra lateral izquierda).
+3. En el buscador escribe **Claude Code**. Busca la que dice **Anthropic** como autor.
+4. Dale **Install**.
+
+{/* verificar: en Cursor, el buscador de extensiones usa el registro Open VSX y en pruebas la extensión "Claude Code" de Anthropic sí aparece ahí (https://open-vsx.org/extension/Anthropic/claude-code). Confirmar en una instalación limpia de Cursor antes de la clase. */}
+
+<Callout type="info" title="¿No te aparece en Cursor?">
+Cursor no usa la misma tienda de extensiones que VS Code, así que a veces la búsqueda no la encuentra. Prueba en este orden:
+
+1. Con Cursor abierto, entra a la página oficial de la extensión y usa el link **"Install for Cursor"**: [code.claude.com/docs/en/vs-code](https://code.claude.com/docs/en/vs-code). Cursor debería abrirse y pedirte confirmar la instalación.
+2. Si no, descarga el archivo `.vsix` desde [open-vsx.org/extension/Anthropic/claude-code](https://open-vsx.org/extension/Anthropic/claude-code) (botón **Download**). Luego en Cursor: panel de extensiones → menú de los tres puntos `···` (arriba a la derecha del panel) → **Install from VSIX…** → elige el archivo.
+3. Si ya la instalaste pero no la ves: `Cmd/Ctrl + Shift + P`, escribe **Developer: Reload Window** y Enter.
+4. Si nada funciona, no pasa nada: usa el [Camino B](#camino-b-desde-la-terminal) en la terminal integrada de Cursor. Es exactamente la misma herramienta.
+</Callout>
+
+### 2. Ábrela
+
+Hay varias formas; usa la que te quede más a la mano:
+
+- **Ícono en la barra lateral izquierda**: aparece un ícono nuevo (una chispa ✱) con la lista de conversaciones de Claude Code. Clic ahí → **nueva conversación**.
+- **Ícono arriba a la derecha del editor**: la misma chispa ✱ aparece en la esquina superior derecha **cuando tienes un archivo abierto**. Abre cualquier archivo (por ejemplo `web/config.js`) y dale clic.
+- **Paleta de comandos**: `Cmd + Shift + P` (Mac) o `Ctrl + Shift + P` (Windows), escribe **Claude Code** y elige **Claude Code: Open in Side Bar** (o *Open in New Tab*).
+
+Se abre un panel de chat, como el de Cursor.
+
+### 3. Inicia sesión
+
+1. La primera vez el panel muestra un botón **Sign in**. Dale clic.
+2. Se abre tu navegador: entra con tu cuenta de [claude.ai](https://claude.ai) (la de pago, plan Pro o superior) y autoriza.
+3. Regresa a Cursor. El panel ya está listo. Esto se hace **una sola vez**.
+
+Si después te sale *"Not logged in · Please run /login"*, el panel vuelve a mostrar el botón de iniciar sesión; si no aparece, recarga la ventana (`Cmd/Ctrl + Shift + P` → **Developer: Reload Window**).
+
+### 4. Tu primer prompt
+
+Con tu proyecto abierto (Claude Code ve la carpeta que tienes abierta en el editor), escribe en el panel algo pequeño y verificable:
+
+<PromptBox label="Prompt de prueba (extensión)">
+Dime en una línea qué hace este proyecto y en qué archivo está el título de la landing. No cambies nada todavía.
+</PromptBox>
+
+Debe contestar mencionando `web/config.js`. Ahora pídele un cambio real:
+
+<PromptBox label="Prompt para Claude Code">
+Cambia el título de la landing en web/config.js: quiero que diga "Tu nueva frase aquí". No toques nada más.
+</PromptBox>
+
+Cuando proponga el cambio, lo verás como un **diff** (verde = agrega, rojo = quita) y te pedirá aprobar. Revísalo y acepta. Luego abre `localhost:3000` y confirma que se ve.
+
+<Checkpoint>
+✅ La extensión **Claude Code** (de Anthropic) aparece instalada en Cursor / VS Code.
+✅ Ves el ícono ✱ y el panel de chat abre.
+✅ Iniciaste sesión con tu cuenta de claude.ai (plan Pro o superior).
+✅ Un prompt de prueba contestó mencionando `web/config.js` y un cambio pequeño se aplicó.
+</Checkpoint>
+
+## Camino B: desde la terminal
+
+El método recomendado es el **instalador nativo** oficial: un solo <Term id="comando">comando</Term> en la terminal. Se actualiza solo y da menos problemas. (También existe `npm install -g @anthropic-ai/claude-code` si ya tienes Node 22 o superior — mismo resultado, pero hay que actualizarlo a mano.)
 
 ### 🍎 En Mac
 
@@ -31,11 +115,11 @@ curl -fsSL https://claude.ai/install.sh | bash
 claude --version
 ```
 
-Deberías ver un número de versión. Si dice *"command not found"*, cierra y reabre la terminal otra vez.
+Deberías ver un número de versión. Si dice *"command not found"*, cierra y reabre la terminal otra vez (ver [Troubleshooting](#troubleshooting-lo-que-más-truena)).
 
 ### 🪟 En Windows
 
-1. Abre el menú Inicio, escribe **PowerShell** y ábrelo.
+1. Abre el menú Inicio, escribe **PowerShell** y ábrelo. (Tu ventana debe empezar con `PS C:\` — así sabes que es PowerShell y no otra terminal.)
 2. Pega esto y dale Enter:
 
 ```powershell
@@ -50,6 +134,10 @@ claude --version
 
 Deberías ver un número de versión. Si dice *"no se reconoce"*, cierra y reabre la terminal (en Windows casi siempre es eso).
 
+<Callout type="info" title="Windows: ¿PowerShell o Git Bash?">
+Para **instalar**, usa PowerShell con el comando de arriba. Si ya instalaste Git (lo hiciste en [Prepara tu compu](/docs/setup/prepara-tu-compu)), Claude Code lo detecta y lo usa por dentro para correr comandos — no tienes que hacer nada. Para **usar** Claude Code, sirve cualquier terminal: PowerShell, Git Bash o la integrada de Cursor.
+</Callout>
+
 ### Inicia sesión (Mac y Windows)
 
 En esa terminal nueva escribe:
@@ -58,20 +146,30 @@ En esa terminal nueva escribe:
 claude
 ```
 
-La primera vez te va a pedir **iniciar sesión**: se abre el navegador para que entres con tu cuenta de [claude.ai](https://claude.ai) (la de pago). Aceptas, vuelves a la terminal y listo — solo se hace una vez.
+La primera vez te va a pedir **iniciar sesión**: se abre el navegador para que entres con tu cuenta de [claude.ai](https://claude.ai) (la de pago). Aceptas, vuelves a la terminal y listo — solo se hace una vez. Si ya iniciaste sesión desde la extensión (Camino A), es la misma cuenta.
 
-## Cómo usarlo
+### Ábrelo dentro de tu proyecto
 
 La única regla importante: hay que abrir Claude Code **dentro de la carpeta de tu proyecto**, para que vea tus archivos. Dos formas fáciles:
 
-- **Desde Cursor / VS Code** (la más cómoda): abre tu proyecto como siempre y abre la terminal integrada (menú *Terminal → New Terminal*, o `` Ctrl + ` ``). Esa terminal ya está parada en tu carpeta.
-- **Sin editor**: en Mac, clic derecho sobre la carpeta en Finder → *Servicios → Nueva terminal en la carpeta*. En Windows, clic derecho sobre la carpeta → *Abrir en Terminal*.
+- **Desde Cursor / VS Code** (la más cómoda): abre tu proyecto como siempre y abre la terminal integrada (menú *Terminal → New Terminal*, o `` Ctrl + ` ``). Esa terminal ya está parada en tu carpeta. Escribe `claude` y Enter.
+- **Sin editor**: en Mac, clic derecho sobre la carpeta en Finder → *Servicios → Nueva terminal en la carpeta*. En Windows, clic derecho sobre la carpeta → *Abrir en Terminal*. Luego `claude`.
 
-Ya ahí, escribe `claude` y empieza a hablarle **en español normal**, igual que a Cursor: le pides el cambio, Claude Code lee y edita los archivos de tu proyecto directamente, y **te pregunta antes de aplicar** cada cambio o comando — tú apruebas o rechazas con las flechas y Enter.
+Ya ahí, escribe tu primer prompt de prueba:
 
-<PromptBox label="Prompt para Claude Code">
-Cambia el título de la landing en web/config.js: quiero que diga "Tu nueva frase aquí". No toques nada más.
+<PromptBox label="Prompt de prueba (terminal)">
+Dime en una línea qué hace este proyecto y en qué archivo está el título de la landing. No cambies nada todavía.
 </PromptBox>
+
+<Checkpoint>
+✅ `claude --version` responde con un número en una terminal nueva.
+✅ Iniciaste sesión con tu cuenta de claude.ai (plan Pro o superior).
+✅ Abriste `claude` dentro de la carpeta de tu proyecto y contestó mencionando `web/config.js`.
+</Checkpoint>
+
+## Cómo usarlo (en los dos caminos)
+
+Háblale **en español normal**, igual que a Cursor: le pides el cambio, Claude Code lee y edita los archivos de tu proyecto directamente, y **te pregunta antes de aplicar** cada cambio o comando — tú apruebas o rechazas (en la terminal, con las flechas y Enter; en la extensión, con botones).
 
 <PromptBox label="Prompt para Claude Code">
 Activa el botón de PayPal en mi proyecto Vibecoding: pon features.paypal en true en web/config.js y configura payment.paypalMeUsername con "miusuario". No cambies nada más.
@@ -82,19 +180,83 @@ Lo básico para moverte dentro de Claude Code:
 | Quieres… | Haz esto |
 |---|---|
 | Pedir un cambio | Escríbelo en español normal y Enter |
+| Darle contexto de un archivo | Escribe `@` y el nombre del archivo (ej. `@web/config.js`), igual que en Cursor |
 | Empezar un tema nuevo | Escribe `/clear` (borra la conversación, no tus archivos) |
 | Interrumpir a Claude a media tarea | Tecla `Esc` |
-| Salir | Escribe `exit` (o `Ctrl + C`) |
+| Cambiar de modo (ver abajo) | `Shift + Tab` (en la terminal) o el selector de modo del panel (extensión) |
+| Salir (terminal) | Escribe `exit` (o `Ctrl + C`) |
 
 <Callout type="info" title="Los mismos consejos que con Cursor">
 Todo lo de [Háblale bien a la IA](/docs/fundamentos/hablarle-a-la-ia) aplica igual: pide una cosa a la vez, di en qué archivo, y revisa lo que propone antes de aprobar. Y después de cada cambio que te guste, guarda con Git como siempre.
 </Callout>
 
+## Los modos: arquitecto, constructor y auditor
+
+Claude Code tiene **modos** que controlan cuánto te pregunta antes de actuar. En la terminal cambias entre ellos con `Shift + Tab` (el modo activo se ve abajo del cuadro de texto); en la extensión, con el selector de modo del panel. La analogía que usamos en clase:
+
+| Modo | En pantalla dice… | Rol | Qué hace |
+|---|---|---|---|
+| **Plan** | `plan mode on` | 🏛️ **Arquitecto** | Investiga tu proyecto y te propone un **plan** por escrito, pero **no toca nada**. Tú lees el plan, lo corriges y hasta que lo apruebas empieza a construir. Úsalo para cambios grandes o cuando no estés seguro de qué pedir. |
+| **Manual** | `manual mode on` | 🧐 Supervisor | Te pregunta **antes de cada** edición o comando. El más seguro; el que más "sí, sí, sí" te hace dar. |
+| **Accept edits** | `accept edits on` | 🔨 Constructor con supervisión | Edita archivos sin preguntar, pero sí pregunta antes de correr comandos. |
+| **Auto** | `auto mode on` | 👷 **Chalán / constructor** | Ejecuta todo sin preguntarte (un segundo modelo revisa por seguridad). Rápido para tareas claras y largas — revisa el resultado al final con `git diff` o en `localhost:3000`. |
+
+El **auditor** (🔍 *debug*) no es un modo con botón: es **cómo le pides las cosas**. Cuando algo truena, cambias de rol y le pides que audite en vez de construir:
+
+<PromptBox label="Prompt modo auditor">
+No cambies nada todavía. Actúa como auditor: revisa por qué al abrir localhost:3000 sale este error [pega el error], explícame la causa en español simple y proponme la corrección más pequeña posible. Cuando la apruebe, la aplicas.
+</PromptBox>
+
+<Callout type="warning" title="Cómo usarlos en la práctica">
+**Arquitecto primero, chalán después.** Para cualquier cosa que toque varios archivos: entra a modo Plan, pide el plan, léelo, corrígelo, apruébalo — y deja que construya (Manual si quieres ver cada paso, Auto si confías en el plan). Nunca sueltes a un chalán sin plano.
+
+En la extensión, las conversaciones de los planes Pro pueden **arrancar en Auto** por defecto. Si prefieres que te pregunte, cámbialo desde el selector de modo o con `Shift + Tab`.
+</Callout>
+
+Para entrar a modo Plan en la terminal también puedes escribir `/plan` antes de tu prompt. `Shift + Tab` de nuevo lo saca del plan sin aprobarlo.
+
+## Troubleshooting: lo que más truena
+
+<Callout type="danger" title="'command not found' / 'no se reconoce' al escribir claude">
+Es lo más común y casi siempre se arregla **cerrando y abriendo una terminal nueva** (la que tenías abierta no se enteró de la instalación). En Cursor: cierra la terminal integrada con el ícono del bote de basura y abre otra con *Terminal → New Terminal*.
+
+Si sigue después de reabrir: reinstala con el comando de tu sistema y vuelve a abrir la terminal. Si aún así nada, pega el error en Cursor o en la extensión y pide ayuda — ver [Leer errores sin pánico](/docs/troubleshooting/leer-errores).
+</Callout>
+
+<Callout type="warning" title="Inicié sesión y me dice que mi cuenta no tiene acceso">
+Estás entrando con una **cuenta gratis** de Claude. Claude Code requiere plan **Pro o superior**. Ve a [claude.ai](https://claude.ai) → tu perfil → *Upgrade*, y luego vuelve a iniciar sesión (en la terminal: escribe `/login` dentro de Claude Code; en la extensión: botón *Sign in*). Ojo: si tienes varias cuentas de Google, revisa que hayas entrado con la que tiene el plan de pago.
+</Callout>
+
+<Callout type="warning" title="Se acabaron mis créditos / 'usage limit'">
+El plan Pro tiene un **límite de uso** que se reinicia cada cierto tiempo (por sesión de ~5 horas y por semana). Si te sale un mensaje de límite a media tarea, Claude Code **espera solo y continúa cuando se reinicia** — puedes dejar la ventana abierta. Mientras tanto: usa Cursor si aún tienes créditos ahí, o prepara tu siguiente prompt. Para gastar menos: pide una cosa a la vez, usa `/clear` al cambiar de tema y no le pegues archivos enormes sin necesidad.
+
+Si se te acabaron los créditos de **Cursor** y por eso estás aquí: Claude Code con plan Pro es la alternativa completa; los prompts del curso funcionan igual.
+</Callout>
+
+<Callout type="warning" title="Windows: ¿PowerShell, CMD o Git Bash?">
+- Si al pegar el comando de instalación te sale *"'irm' is not recognized"*, estás en **CMD**, no en PowerShell. Cierra esa ventana y abre **PowerShell** desde el menú Inicio (la ventana empieza con `PS C:\`).
+- Si te sale *"'bash' is not recognized"*, copiaste el comando de **Mac**. Usa el de Windows (`irm https://claude.ai/install.ps1 | iex`).
+- Si te sale *"running scripts is disabled on this system"*, corre una vez `Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned`, responde `S`, cierra y reabre la terminal (es lo mismo que hiciste en [Prepara tu compu](/docs/setup/prepara-tu-compu)).
+- **Git Bash** también sirve para *usar* Claude Code (`claude` funciona igual ahí). Para *instalar*, quédate con PowerShell.
+</Callout>
+
+<Callout type="info" title="La extensión no aparece / el ícono ✱ no está">
+1. Abre un **archivo** (no solo la carpeta): el ícono de arriba a la derecha solo sale con un archivo abierto.
+2. `Cmd/Ctrl + Shift + P` → **Developer: Reload Window**.
+3. Si tienes otras extensiones de IA (Cline, Continue…), desactívalas un momento — a veces chocan.
+4. Si Cursor te abrió el proyecto en *Restricted Mode* (aviso de "¿confías en esta carpeta?"), dale **Trust**: la extensión no funciona en modo restringido.
+5. Nada funcionó → [Camino B](#camino-b-desde-la-terminal) en la terminal integrada. Es la misma herramienta.
+</Callout>
+
+<Callout type="info" title="¿Todo se ve raro (letras encimadas) en la terminal de Cursor?">
+Escribe `/terminal-setup` dentro de Claude Code y Enter: ajusta la terminal del editor y lo arregla. Para un chequeo general de tu instalación, escribe `/doctor` dentro de Claude Code (o `claude doctor` en la terminal si `claude` no arranca).
+</Callout>
+
 <Checkpoint>
-✅ `claude --version` responde con un número en una terminal nueva.
-✅ Iniciaste sesión con tu cuenta de claude.ai (plan Pro o superior).
-✅ Abriste `claude` dentro de la carpeta de tu proyecto y le pediste un cambio pequeño.
+✅ Tienes Claude Code funcionando por al menos uno de los dos caminos (extensión o terminal).
+✅ Sabes cambiar de modo (`Shift + Tab` o el selector del panel) y cuándo usar Plan (arquitecto) vs Auto (constructor).
 ✅ Sabes salir (`exit`), interrumpir (`Esc`) y empezar de cero (`/clear`).
+✅ Si algo truena, sabes dónde buscar: reabrir la terminal, `/doctor`, o esta sección.
 </Checkpoint>
 
 **Para el curso, Claude Code sirve exactamente igual que Cursor**: todos los prompts de las guías y tutoriales funcionan en cualquiera de los dos. Usa el que prefieras — o los dos.
